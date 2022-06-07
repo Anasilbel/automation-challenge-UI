@@ -1,6 +1,15 @@
 # automation-challenge-UI
 automation to make sure requirements described inside test challenge works as expecting
+
+### Prerequisites
+
+1. POSIX shell (Windows users should use a Bash terminal).
+2. Node version > v12  (check using `node -v`).
+3. Yarn (install using `npm i -g yarn`).
+4. make sure you are using the latest version, (`nvm use Version`)
+5. Install Prettier extension for your IDE.
 ### Setup
+Kind reminder ( is import before to setup, review the preconditios)
 
 1. Clone this repository.
 2. Install dependencies using `yarn install`.
@@ -70,13 +79,6 @@ As seen in the example above, it translates very close to "what the user sees" o
 ### Playwright Inspector
 
 The [Inspector](https://playwright.dev/docs/inspector) tool has the ability to generate the code while we define a user flow using a browser. This eliminates the overhead on an engineer's end to write code and figure out the appropriate selectors. Moreover, Playwright Inspector tries its best to use "user focused selectors" (see section titled "User focused selectors") as much as possible.
-
-### Prerequisites
-
-1. POSIX shell (Windows users should use a Bash terminal).
-2. Node version > v12  (check using `node -v`).
-3. Yarn (install using `npm i -g yarn`).
-5. Install Prettier extension for your IDE.
 
 ### Improvement opportinities
 - I see the page dont have a search filter, it could added to find an specific item.
