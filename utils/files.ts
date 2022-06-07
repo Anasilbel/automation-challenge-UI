@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 
+//this function was crerated to support the way to choose an item no matter how many exists.
 export async function getValueRandomFromList(page: Page) {
     const ItemsCart = await page.locator("//div[@class='inventory_item_name']").allInnerTexts();
     let valRandom = ItemsCart[Math.floor(Math.random() * ItemsCart.length)];

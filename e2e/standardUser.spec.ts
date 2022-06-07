@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
     await page.click("input[type='submit']");
 });
 
-test.describe('this test is to make sure functionalities like add item, remove item, verify total @testchallenge', () => {
+test.describe('this test is to make sure functionalities like add item, remove item, verify total @testchallenge, @standarduser', () => {
     test('should add first item and calculate the final total', async ({ page }) => {
         //get first item name to add to the cart
         let firstItem = await getValueRandomFromList(page);

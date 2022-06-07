@@ -3,7 +3,7 @@ import {userNameLocked, password} from '../configuration/helper';
 
 
 
-test.describe('locked user @testchallenge', () => {
+test.describe('locked user @testchallenge, @lockeduser', () => {
     test('should not to allow login to the user locked ', async ({ page }) => {
 
         //get name of value to add
