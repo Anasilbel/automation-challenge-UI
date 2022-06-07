@@ -8,9 +8,11 @@ automation to make sure requirements described inside test challenge works as ex
 3. Yarn (install using `npm i -g yarn`).
 4. make sure you are using the latest version, (`nvm use Version`)
 5. Install Prettier extension for your IDE.
-### Setup
-Kind reminder ( is import before to setup, review the preconditios)
 
+### Kind reminder 
+1. ( is import before to setup, review the preconditios)
+2. the first time to execute the script, it will fail due have to take the screenshots to have to compare
+### Setup
 1. Clone this repository.
 2. Install dependencies using `yarn install`.
 3. Run all tests using `npx playwright test`.
@@ -20,6 +22,8 @@ Kind reminder ( is import before to setup, review the preconditios)
 7. run headed on ` npx playwright test yourtest.spec.ts --headed`.
 8. run in debug `npx playwright test yourtest.spec.ts  --debug`
 9. run and see the report `npx playwright test --reporter=html`
+
+
 
 ## What is this about?
 
