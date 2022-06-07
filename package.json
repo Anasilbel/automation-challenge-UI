@@ -1,0 +1,28 @@
+{
+  "name": "webauttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2",
+    "@applitools/eyes-playwright": "^1.11.2",
+    "@types/lodash.merge": "^4.6.6",
+    "allure-playwright": "^2.0.0-beta.14",
+    "husky": "^7.0.4",
+    "kill-port": "^1.6.1",
+    "lint-staged": "^11.2.6",
+    "lodash.merge": "^4.6.2",
+    "openurl": "^1.1.1",
+    "playwright-chromium": "1.18.0",
+    "plop": "^2.7.6",
+    "prettier": "2.4.1",
+    "rimraf": "^3.0.2",
+    "static-server": "^2.2.1",
+    "talkback": "^2.5.0"
+  }
+}
