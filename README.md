@@ -19,6 +19,7 @@ Kind reminder ( is import before to setup, review the preconditios)
 6. Open test report using ` npx playwright show-report`.
 7. run headed on ` npx playwright test yourtest.spec.ts --headed`.
 8. run in debug `npx playwright test yourtest.spec.ts  --debug`
+9. run and see the report `npx playwright test --reporter=html`
 
 ## What is this about?
 

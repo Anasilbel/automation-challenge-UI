@@ -10,15 +10,18 @@ test.beforeEach(async ({ page }) => {
     await page.fill("input[placeholder='Password']",password);
     // click on button login
     await page.click("input[type='submit']");
+    await page.waitForSelector('html',{state:'visible'});
 });
 
 test.describe('this test is to make sure functionalities like add item, remove item, verify total @testchallenge, @standarduser', () => {
     test('should add first item and calculate the final total', async ({ page }) => {
+        
+        await page.waitForLoadState();
         //get first item name to add to the cart
         let firstItem = await getValueRandomFromList(page);
         //click in button to add item to the cart
         await page.click(firstItem);
-        await page.waitForLoadState('load');
+        await page.waitForLoadState();
         //assertion to make sure the item was added in to the cart
         await expect (page.locator('span.shopping_cart_badge')).toContainText('1');
         //add second item to add in to the cart
@@ -70,26 +73,36 @@ test.describe('this test is to make sure functionalities like add item, remove i
         //including visual comparison
         expect(await page.screenshot()).toMatchSnapshot('succesfull-purchased.png');
     });
-    test('sort by name and validate is rigth', async ({ page }) => {
+    test('sort by name and validate is rigth @sort', async ({ page }) => {
         //order by naame (z to a)
         await page.locator('[data-test="product_sort_container"]').selectOption('za');
+        //wait the selector is loaded
+        await page.waitForSelector("div.peek",{state:'visible'});
         //visual comparison assertion
-        expect(await page.screenshot()).toMatchSnapshot('sorted-by-name-a-z.png');
         await expect(page.locator("(//div[@class='inventory_item'])[1]")).toContainText('Test.allTheThings() T-Shirt (Red)');
+        //make visual comparison
+        await page.waitForLoadState('load');
+        expect(await page.screenshot()).toMatchSnapshot('sorted-by-name-a-z.png');
         //order by naame (z to a)
         await page.locator('[data-test="product_sort_container"]').selectOption('az');
         //visual comparison assertion
+        await page.waitForSelector("div.peek",{state:'visible'});
         expect(await page.screenshot()).toMatchSnapshot('sorted-by-name-z-a.png');
         await expect(page.locator("(//div[@class='inventory_item'])[6]")).toContainText('Test.allTheThings() T-Shirt (Red)');
     });
-    test('sort by price and validate is rigth', async ({ page }) => {
+    test('sort by price and validate is rigth @sort', async ({ page }) => {
         //order by price low to high
         await page.locator('[data-test="product_sort_container"]').selectOption('lohi');
-        expect(await page.screenshot()).toMatchSnapshot('sorted-by-price-low-high.png');
         await expect(page.locator("(//div[@class='inventory_item_price'])[1]")).toContainText('7.99');
-        //order by naame (z to a)
+        await page.waitForLoadState('load');
+        await page.waitForSelector("div.peek",{state:'visible'});
+        expect(await page.screenshot()).toMatchSnapshot('sorted-by-price-low-high.png');
+        
+        //order by name (z to a)
         await page.locator('[data-test="product_sort_container"]').selectOption('hilo');
-        expect(await page.screenshot()).toMatchSnapshot('sorted-by-price-high-low.png');
         await expect(page.locator("(//div[@class='inventory_item_price'])[6]")).toContainText('7.99');
+        await page.waitForSelector("div.peek",{state:'visible'});
+        expect(await page.screenshot()).toMatchSnapshot('sorted-by-price-high-low.png');
+        
         });
 })
