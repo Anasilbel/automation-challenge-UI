@@ -4,25 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "report": "npx playwright test --reporter=html && npx playwright show-report",
+    "debug": "npx playwright test --debug",
+    "test": "npx playwright test",
+    "test-us": " npx playwright test --update-snapshots",
+    "github-action": "npx playwright test --config=github.config.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.22.2",
-    "@applitools/eyes-playwright": "^1.11.2",
-    "@types/lodash.merge": "^4.6.6",
-    "allure-playwright": "^2.0.0-beta.14",
-    "husky": "^7.0.4",
-    "kill-port": "^1.6.1",
-    "lint-staged": "^11.2.6",
-    "lodash.merge": "^4.6.2",
-    "openurl": "^1.1.1",
-    "playwright-chromium": "1.18.0",
-    "plop": "^2.7.6",
-    "prettier": "2.4.1",
-    "rimraf": "^3.0.2",
-    "static-server": "^2.2.1",
-    "talkback": "^2.5.0"
+    "@types/nodemailer": "^6.4.4",
+    "clipboardy":"^3.0.0",
+    "experimental-allure-playwright":"^0.0.3",
+    "nodemailer":"^6.7.5",
+    "ts-node":"^10.8.1",
+    "node":"^17.7.2",
+    "typescript":"^4.7.3",
+    "winston":"^3.7.2"
+
   }
 }

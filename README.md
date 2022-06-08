@@ -13,15 +13,16 @@ automation to make sure requirements described inside test challenge works as ex
 1. ( is import before to setup, review the preconditios)
 2. the first time to execute the script, it will fail due have to take the screenshots to have to compare
 ### Setup
-1. Clone this repository.
-2. Install dependencies using `yarn install`.
-3. Run all tests using `npx playwright test`.
-4. run an specific test `npx playwright test yourtest.spec.ts`.
-5. Run a subset of tests via a tag using `npx playwright test --grep @standarduser`.
-6. Open test report using ` npx playwright show-report`.
-7. run headed on ` npx playwright test yourtest.spec.ts --headed`.
-8. run in debug `npx playwright test yourtest.spec.ts  --debug`
-9. run and see the report `npx playwright test --reporter=html`
+1. Clone this repository. `https://github.com/Anasilbel/automation-challenge-UI.git`
+2. Install dependencies using `yarn install`. (use node version > 12v )
+3. update the images `npm test-us`.
+4. Run all tests using `npm test`.
+5. run an specific test `npm test yourtest.spec.ts`.
+6. Run a subset of tests via a tag using `npx playwright test --grep @standarduser`.
+7. run headed on ` npm test --headed`.
+8. run in debug `npm debug`
+9. see the report `npm report`
+10. run with a tag `npm test @tag`
 
 
 
